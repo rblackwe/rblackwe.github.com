@@ -1,0 +1,7 @@
+---
+layout: post
+title: Starting up.
+---
+
+h1. {{ page.title }}
+Working to get my blog on.
