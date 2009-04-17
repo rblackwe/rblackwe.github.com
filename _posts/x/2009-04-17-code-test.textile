@@ -1,0 +1,13 @@
+---
+layout: post
+title: Testing for code hightlighting.
+---
+
+h1. {{ page.title }}
+
+
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
