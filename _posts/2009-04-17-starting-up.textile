@@ -5,3 +5,9 @@ title: Starting up.
 
 h1. {{ page.title }}
 Working to get my blog on.
+
+<div id="comments">
+  <h2>Comments</h2>
+	<a href="http://groups.google.com/group/robertblackwell/browse_thread/thread/2857e24b569dd165">on google groups</a>
+
+</div>
