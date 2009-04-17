@@ -1,0 +1,71 @@
+---
+layout: post
+title: Downloading large files in Adobe AIR using Flex
+---
+
+h1. {{ page.title }}
+
+p(meta). Jun 5, 2008 - San Diego
+
+Everyone is probably familiar with the method for downloading files provided in the Flex documentation:
+
+{% highlight actionscript %}
+var urlString:String = "http://example.com/myfile.zip";
+var urlReq:URLRequest = new URLRequest(urlString);
+var urlStream:URLStream = new URLStream();
+var fileData:ByteArray = new ByteArray();
+urlStream.addEventListener(Event.COMPLETE, loaded);
+urlStream.load(urlReq);
+
+function loaded(event:Event):void {
+  urlStream.readBytes(fileData, 0, urlStream.bytesAvailable);
+  writeFile();
+}
+
+function writeFile():void {
+  var file:File = File.desktopDirectory.resolvePath("myfile.zip");
+  var fileStream:FileStream = new FileStream();
+  fileStream.openAsync(file, FileMode.WRITE);
+  fileStream.writeBytes(fileData, 0, fileData.length);
+  fileStream.close();
+}
+{% endhighlight %}
+
+The only problem with this is the file data is stored in memory until you write it to disk. Obviously this will not work well for large files (on the order of hundreds of megabytes).
+
+Here's a better way to download large files that works by using the progress event to write bytes to disk as they come in:
+
+{% highlight actionscript %}
+var urlString:String = "http://example.com/myfile.zip";
+var urlReq:URLRequest = new URLRequest(urlString);
+private var urlStream:URLStream = new URLStream();
+private var fileStream:FileStream = new FileStream();
+
+urlStream.addEventListener(Event.COMPLETE, loaded);
+urlStream.addEventListener(ProgressEvent.PROGRESS, writeFile);
+
+var file:File = File.desktopDirectory.resolvePath("myfile.zip");
+fileStream.openAsync(file, FileMode.WRITE);
+
+urlStream.load(urlReq);
+
+function writeFile(event:ProgressEvent):void {
+  // only write every 50k or so downloaded
+  if (urlStream.bytesAvailable > 51200) {
+    // Read the buffer into a ByteArray and write it to disk
+    var data:ByteArray = new ByteArray();
+    urlStream.readBytes(data, 0, urlStream.bytesAvailable);
+    fileStream.writeBytes(data, 0, data.length);
+  }
+}
+
+function loaded(event:Event):void {
+  // Write any remaining data to the file before closing it
+  var data:ByteArray = new ByteArray();
+  urlStream.readBytes(data, 0, urlStream.bytesAvailable);
+  fileStream.writeBytes(data, 0, data.length);
+  fileStream.close();
+}
+{% endhighlight %}
+
+Enjoy!

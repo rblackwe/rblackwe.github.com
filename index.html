@@ -1,2 +1,29 @@
-
-<a href="http://github.com/rblackwe/beta/tree/master">beta</a>
+---
+layout: default
+title: Jarinheit
+---
+ 
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  <h1>Commercial Projects</h1>
+  <ul class="posts">
+     <li><a href="http://robotmo.de/mailer">Robot Mailer</a>: Easy email marketing campaign management with automated email client and spam filter testing</li>
+  </ul>
+  
+  <h1>Open Source Projects</h1>
+  <ul class="posts">
+    <li><a href="http://github.com/jarinudom/bg-secure/tree/master">BG Secure</a>: Rails plugin for generating Bitgravity secure URLs (co-authored with Martin Emde)</li>
+  </ul>
+  
+  <h1>Homies and Cronies</h1>
+  <ul class="posts">
+    <li><a href="http://sneaky.me">Sneaky.me</a></li>
+    <li><a href="http://themightyafro.com/">The Mighty Afro</a></li>
+  </ul>
+</div>
