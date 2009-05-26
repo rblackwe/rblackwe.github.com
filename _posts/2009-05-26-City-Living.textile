@@ -1,0 +1,13 @@
+---
+layout: post
+title: City Living.
+---
+
+h1. {{ page.title }}
+
+It is ridiculous that my City Living has made me so numb I keep working outside when I hear a drive by shooting.
+
+http://postgazette.com/pg/09146/972724-100.stm
+
+Last night I was out working in the yard and heard the shots. They were not close enough for me to stop working. Five or so years ago I would have stopped what I was doing, called 911. and would go off off to see what the neighbors were doing about it.
+
