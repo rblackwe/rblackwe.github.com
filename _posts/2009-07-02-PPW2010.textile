@@ -1,0 +1,11 @@
+---
+layout: post
+title: Pittsburgh Perl Workshop 2010
+---
+
+h1. {{ page.title }}
+
+Starting to think about Pittsburgh Perl Workship 2010.  I am all excited and you should be too.
+
+http://pghpw.org
+
