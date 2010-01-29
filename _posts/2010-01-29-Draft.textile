@@ -8,5 +8,36 @@ h1. {{ page.title }}
 
 Draft
 
-* able
-* baker
+* Flex
+
+	http://www.adobe.com/cfusion/event/index.cfm?event=detail&id=1489921&loc=en_us
+	http://www.adobe.com/devnet/flex/articles/flex_certification.html
+	http://www.adobe.com/devnet/flex/?view=gettingstarted
+	http://www.adobe.com/devnet/flex/quickstart/your_first_application/
+ 
+* Git and Github
+
+	http://learn.github.com/
+	http://help.github.com/
+	http://github.com/blog
+
+* Buzzsprout
+
+	http://www.buzzsprout.com/272
+
+
+* Tie::TextDir and SQL
+
+	http://search.cpan.org/~kwilliams/Tie-TextDir-0.06/TextDir.pm
+	http://use.perl.org/~janus/journal/40134
+
+* Chumby hacking
+
+	http://hackingthechumby.eventbrite.com/
+
+* Pulse Audio
+
+	http://pulseaudio.org/wiki/FirstSteps
+	http://pulseaudio.org/wiki/CLI
+	http://pulseaudio.org/
+
