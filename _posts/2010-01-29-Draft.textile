@@ -1,0 +1,12 @@
+---
+layout: post
+title: Daily Draft x 
+---
+
+h1. {{ page.title }}
+
+
+Draft
+
+* able
+* baker
