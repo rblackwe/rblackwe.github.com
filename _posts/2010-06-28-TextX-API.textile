@@ -1,6 +1,6 @@
 ---
-layout: post_comment
-title: TestY::API
+layout: post
+title: Testz::API
 ---
 
 h1. {{ page.title }}
