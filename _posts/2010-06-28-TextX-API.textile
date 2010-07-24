@@ -1,5 +1,5 @@
 ---
-layout: post_comments
+layout: post_comment
 title: TestY::API
 ---
 
